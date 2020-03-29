@@ -1,0 +1,71 @@
+body {
+    background-color: #eef9bf;
+    font-family: 'Andika', sans-serif;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.header-background {
+    background: linear-gradient(#a7e9af, #eef9bf);
+    padding: 1rem 0 4rem 0;
+}
+
+.main-title {
+    color: #75b79e;
+    font-family: 'Righteous', cursive;
+    font-size: 4rem;
+    font-style: italic;
+    margin: 0 0 -30px 0;
+    -webkit-text-stroke: 0.1px black;
+}
+
+.board {
+    margin: 0 auto;
+    min-height: 2rem;
+    text-align: center;
+    width: 95%;
+}
+
+.quadrant {
+    display: inline-block;
+    min-height: 50px;
+    width: 50%;
+}
+
+.round {
+    display: inline-block;
+    min-height: 50px;
+    vertical-align: top;
+    width: 25%;
+}
+
+.matchup {
+    background-image: linear-gradient(#fff, 30%, #e6e6e6);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.competitor {
+    height: 49%;
+    text-align: left;
+    width: 100%;
+}
+
+.input-area input {
+    background: none;
+    border: none;
+    box-shadow: 0 1px #e6e6e6;
+    height: 50%;
+    margin-left: 3%;
+    width: 80%;
+}
+
+
+footer {
+    font-size: 1.1rem;
+    text-align: center;
+}
