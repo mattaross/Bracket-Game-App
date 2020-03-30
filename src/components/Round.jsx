@@ -53,7 +53,13 @@ function Round(props) {
     return (
         <div className="round" style={calculatePadding(props.roundNum)}>
             {numMatchups.map((matchup, i) => {
-               return <Matchup roundNum={props.roundNum} marginValue={marginForThisRound} matchupHeight={matchupHeight} /> 
+               return (
+                    <Matchup
+                        roundNum={props.roundNum}
+                        marginValue={marginForThisRound}
+                        matchupHeight={matchupHeight}
+                    />
+               );
             })}
         </div>
     );
