@@ -7,10 +7,12 @@ function Matchup(props) {
         return {"height": props.matchupHeight, "marginBottom": props.marginValue}
     }
 
+    const competitorNum = props.matchupNum * 2;
+
     return (
         <div className="matchup" style={setStyle()}>
-            <Competitor top="true" roundNum={props.roundNum} />
-            <Competitor top="false" roundNum={props.roundNum} />
+            <Competitor top="true" roundNum={props.roundNum} height={props.matchupHeight} competitorNum={competitorNum - 1} />
+            <Competitor top="false" roundNum={props.roundNum} height={props.matchupHeight} competitorNum={competitorNum} />
         </div>
     );
 }

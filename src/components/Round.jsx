@@ -4,9 +4,60 @@ import Matchup from "./Matchup";
 function Round(props) {
     let numMatchups =[];
 
+    // Calculate appropriate numbering for this round's matchups
+    let startingNum = 1;
+    switch (props.quadNum) {
+        case 1:
+            if (props.roundNum === 1) {
+                startingNum = 1;
+            } else if (props.roundNum === 2) {
+                startingNum = 33;
+            } else if (props.roundNum === 3) {
+                startingNum = 49;
+            } else if (props.roundNum === 4) {
+                startingNum = 57;
+            }
+            break;
+        case 2:
+            if (props.roundNum === 1) {
+                startingNum = 9;
+            } else if (props.roundNum === 2) {
+                startingNum = 37;
+            } else if (props.roundNum === 3) {
+                startingNum = 51;
+            } else if (props.roundNum === 4) {
+                startingNum = 58;
+            }
+            break;
+        case 3:
+            if (props.roundNum === 1) {
+                startingNum = 17;
+            } else if (props.roundNum === 2) {
+                startingNum = 41;
+            } else if (props.roundNum === 3) {
+                startingNum = 53;
+            } else if (props.roundNum === 4) {
+                startingNum = 59;
+            }
+            break;
+        case 4:
+            if (props.roundNum === 1) {
+                startingNum = 25;
+            } else if (props.roundNum === 2) {
+                startingNum = 45;
+            } else if (props.roundNum === 3) {
+                startingNum = 55;
+            } else if (props.roundNum === 4) {
+                startingNum = 60;
+            }
+            break;
+        default:
+            startingNum = 1;
+    }
+
     // Create appropriately sized arrays from which to map the number of matchups per round:
-    for (var i = 0; i<(8/Math.pow(2, props.roundNum - 1)); i++) {
-        numMatchups.push(0);
+    for (var i = startingNum; i<startingNum + (8/Math.pow(2, props.roundNum - 1)); i++) {
+        numMatchups.push(i);
     }
 
     // Enter global values here, other dimensions will adjust:
@@ -58,6 +109,7 @@ function Round(props) {
                         roundNum={props.roundNum}
                         marginValue={marginForThisRound}
                         matchupHeight={matchupHeight}
+                        matchupNum={matchup}
                     />
                );
             })}

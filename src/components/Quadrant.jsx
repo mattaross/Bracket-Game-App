@@ -5,20 +5,24 @@ function Quadrant(props) {
     return (
         <div className="quadrant">
             <Round
-                quadNum={props.quadNum}
+                roundSide={props.quadSide}
                 roundNum={props.quadSide === "left" ? 1 : 4}
+                quadNum={props.quadNum}
             />
             <Round
-                quadNum={props.quadNum}
+                roundSide={props.quadSide}
                 roundNum={props.quadSide === "left" ? 2 : 3}
+                quadNum={props.quadNum}
             />
             <Round
-                quadNum={props.quadNum}
+                roundSide={props.quadSide}
                 roundNum={props.quadSide === "left" ? 3 : 2}
+                quadNum={props.quadNum}
             />
             <Round
-                quadNum={props.quadNum}
+                roundSide={props.quadSide}
                 roundNum={props.quadSide === "left" ? 4 : 1}
+                quadNum={props.quadNum}
             />
         </div>
     );
