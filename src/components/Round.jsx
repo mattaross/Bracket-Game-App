@@ -101,15 +101,22 @@ function Round(props) {
         return {"paddingTop": paddingValue}
     }
 
+    function passWinnerDataToQuadrant(data) {
+        props.onWinnerDataReceived(data);
+    }
+
     return (
         <div className="round" style={calculatePadding(props.roundNum)}>
             {numMatchups.map((matchup, i) => {
                return (
                     <Matchup
+                        quadNum={props.quadNum}
                         roundNum={props.roundNum}
                         marginValue={marginForThisRound}
                         matchupHeight={matchupHeight}
                         matchupNum={matchup}
+                        onWinnerSelected={passWinnerDataToQuadrant}
+                        winnerDataToSend={props.winnerDataToSend}
                     />
                );
             })}

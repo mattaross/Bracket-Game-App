@@ -7,9 +7,7 @@ function Competitor(props) {
     const [newTitle, setNewTitle] = useState("");
     const [bandEntered, setBandEntered] = useState(false);
     const [newBand, setNewBand] = useState("");
-    const [competitorSelected, setCompetitorSelected] = useState(false);
-    const [selectionTitle, setSelectionTitle] = useState("");
-    const [selectionBand, setSelectionBand] = useState("");
+    const [winnerDataAdded, setWinnerDataAdded] = useState(false);
 
     function setStyle() {
         if (props.top === "true") {
@@ -49,6 +47,23 @@ function Competitor(props) {
         } else {
             setBandEntered(false);
         }
+    }
+
+    function handleWinnerSelection() {
+        const selectedWinnerData = {
+            winnerTargetSpot: props.targetSpotNum,
+            winnerTitle: newTitle,
+            winnerBand: newBand,
+            winnerQuad: props.quadNum,
+            winnerRound: props.roundNum,
+            winnerMatchup: props.matchupNum,
+            winnerCompetitor: props.competitorNum
+        }
+
+        console.log(selectedWinnerData);
+        
+
+        props.onSelectedWinner(selectedWinnerData);
     }
 
     function firstRoundForms() {
@@ -117,7 +132,7 @@ function Competitor(props) {
             );
         } else if (titleEntered && bandEntered) {
             return (
-                <table className="competitor-table table-finished" style={setShape()}>
+                <table className="competitor-table table-finished" style={setShape()} onClick={handleWinnerSelection}>
                     <tr className="table-row-unfinished">
                         <td className="table-data-left">
                         <p className="song-title-text">{newTitle}</p>
@@ -140,17 +155,29 @@ function Competitor(props) {
     }
 
     function otherRounds() {
-        if (competitorSelected) {
+        if (props.competitorNum === props.winnerDataToRender.winnerTargetSpot) {
+            if (!winnerDataAdded) {
+                setNewTitle(props.winnerDataToRender.winnerTitle);
+                setNewBand(props.winnerDataToRender.winnerBand);
+                setWinnerDataAdded(true);
+            }
+        }
+
+        if (winnerDataAdded) {
             return (
-                <table className="table-not-first-round" style={setShape()}>
+                <table className="table-not-first-round" style={setShape()} onClick={handleWinnerSelection}>
                     <tr>
                         <td>
-                        <p className="song-title-text">{selectionTitle}</p>
+                            <p className="song-title-text">
+                                {newTitle}
+                            </p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p className="band-name-text">{selectionBand}</p>
+                            <p className="band-name-text">
+                                {newBand}
+                            </p>
                         </td>
                     </tr>
                 </table>
