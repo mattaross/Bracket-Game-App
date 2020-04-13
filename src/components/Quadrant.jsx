@@ -10,7 +10,36 @@ function Quadrant(props) {
     function sendWinnerDataToNextRound(data) {
         data.winnerRound += 1;
 
-        setReceivedWinnerData(data);
+        console.log(data);
+        
+
+        if (data.deletedData) {
+            if (data.winnerRound < 6) {
+                setReceivedWinnerData(data);
+            } else {
+                props.onLastRoundsDataReceived(data);
+            }
+        } else {
+            if (data.winnerRound < 5) {
+                setReceivedWinnerData(data);
+            } else {
+                props.onLastRoundsDataReceived(data);
+            }
+        }
+
+        // if (data.winnerRound < 5) {
+        //     setReceivedWinnerData(data);
+        // } else {
+        //     if (!data.deletedData) {
+        //         props.onLastRoundsDataReceived(data);
+        //     } else {
+        //         if (data.winnerRound < 6) {
+        //             setReceivedWinnerData(data);
+        //         } else {
+        //             props.onLastRoundsDataReceived(data);
+        //         }
+        //     }
+        // }
     }
 
     return (

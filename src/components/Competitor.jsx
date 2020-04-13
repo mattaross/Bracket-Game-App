@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function Competitor(props) {
     const [titleEntered, setTitleEntered] = useState(false);
@@ -49,6 +50,23 @@ function Competitor(props) {
         }
     }
 
+    function handleDelete() {
+        const selectedWinnerData = {
+            winnerTargetSpot: props.targetSpotNum,
+            winnerTitle: newTitle,
+            winnerBand: newBand,
+            winnerQuad: props.quadNum,
+            winnerRound: props.roundNum,
+            winnerMatchup: props.matchupNum,
+            winnerCompetitor: props.competitorNum,
+            deletedData: true
+        };
+
+        props.onSelectedWinner(selectedWinnerData);
+
+        setWinnerDataAdded(false);
+    }
+
     function handleWinnerSelection() {
         const selectedWinnerData = {
             winnerTargetSpot: props.targetSpotNum,
@@ -58,10 +76,7 @@ function Competitor(props) {
             winnerRound: props.roundNum,
             winnerMatchup: props.matchupNum,
             winnerCompetitor: props.competitorNum
-        }
-
-        console.log(selectedWinnerData);
-        
+        };
 
         props.onSelectedWinner(selectedWinnerData);
     }
@@ -155,7 +170,7 @@ function Competitor(props) {
     }
 
     function otherRounds() {
-        if (props.competitorNum === props.winnerDataToRender.winnerTargetSpot) {
+        if (props.competitorNum === props.winnerDataToRender.winnerTargetSpot && !props.winnerDataToRender.deletedData) {
             if (!winnerDataAdded) {
                 setNewTitle(props.winnerDataToRender.winnerTitle);
                 setNewBand(props.winnerDataToRender.winnerBand);
@@ -165,22 +180,25 @@ function Competitor(props) {
 
         if (winnerDataAdded) {
             return (
-                <table className="table-not-first-round" style={setShape()} onClick={handleWinnerSelection}>
-                    <tr>
-                        <td>
-                            <p className="song-title-text">
-                                {newTitle}
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p className="band-name-text">
-                                {newBand}
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+                <div className="not-first-round-container">
+                    <table className="table-not-first-round" style={setShape()} onClick={handleWinnerSelection}>
+                        <tr>
+                            <td>
+                                <p className="song-title-text">
+                                    {newTitle}
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p className="band-name-text">
+                                    {newBand}
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <button className="delete-button" onClick={handleDelete}><DeleteIcon style={{"fontSize": 18}} /></button>
+                </div>
             );
         }
     }

@@ -25,7 +25,7 @@ header {
 }
 
 .board {
-    margin: 0 auto;
+    margin: 0 auto -60px auto;
     min-width: 1443px;
     text-align: center;
     width: 95%;
@@ -182,12 +182,41 @@ header {
 .table-not-first-round {
     border-collapse: collapse;
     border-spacing: 0;
-    height: 100%;
+    height: 90%;
     width: 100%;
 }
 
 .table-not-first-round:hover {
     background-color: rgb(200, 230, 140);
+    cursor: pointer;
+}
+
+.table-not-first-round td {
+    padding: 0;
+}
+
+.not-first-round-container {
+    height: 100%;
+    width: 100%;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    border-radius: 100%;
+    bottom: 44px;
+    color: rgb(241, 102, 102);
+    height: 18px;
+    left: 140px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 18px;
+    z-index: 10;
+}
+
+.delete-button:hover {
+    color: grey;
     cursor: pointer;
 }
 
@@ -250,6 +279,121 @@ header {
     cursor: pointer;
 }
 
+.last-rounds-area {
+    margin: 0 auto;
+    min-width: 1443px;
+    text-align: center;
+    width: 95%;
+}
+
+.semifinal-title {
+    color: #eeb947;
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    font-style: italic;
+    margin: 0 0 30px 0;
+}
+
+.semifinal-area {
+    margin-bottom: 30px;
+}
+
+.semifinal-area .matchup {
+    display: inline-block;
+    width: 163px;
+}
+
+.semifinal-matchups-container {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.semifinal-individual-matchup-container {
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+    text-align: center;
+    vertical-align: top;
+    width: 44%;
+}
+
+.final-title {
+    color: #df4e4e;
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    font-style: italic;
+    margin: 0 0 30px 0;
+    /* -webkit-text-stroke: 0.1px black; */
+}
+
+.final-area {
+    margin-bottom: 30px;
+}
+
+.final-area .matchup {
+    display: inline-block;
+    width: 163px;
+}
+
+.champion-area {
+    /* background-color: rgb(127, 209, 209); */
+    background-color: #22817d;
+    /* background-image: url(/public/images/back-pattern.png); */
+    background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+    border: 2px solid black;
+    border-radius: 50px;
+    box-shadow: 0 0 8px #9c9c9c;
+    height: 300px;
+    margin: 0 auto 70px auto;
+    width: 60%;
+}
+
+.champion-title {
+    color: #47ee8c;
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    font-style: italic;
+    margin: 9px 0 30px 0;
+    -webkit-text-stroke: 0.1px black;
+}
+
+.champion-area h4 {
+    color: rgb(238, 237, 221);
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.champion-area p {
+    color: rgb(238, 237, 221);
+    font-style: italic;
+}
+
+.champion-area h5 {
+    color: rgb(238, 237, 221);
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+
+.save-button {
+    background-color: tomato;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-family: 'Andika', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 60px;
+    margin-bottom: 30px;
+    margin-left: 46%;
+    width: 9%;
+}
+
+.save-button:hover {
+    background: none;
+    border: 2px solid tomato;
+    color: tomato;
+    cursor: pointer;
+}
 
 footer {
     font-size: 1.1rem;

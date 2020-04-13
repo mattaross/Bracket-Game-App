@@ -1,5 +1,6 @@
 import React from "react";
 import Matchup from "./Matchup";
+import { matchupBoxHeight, firstRoundBoxesMargin } from "../util/dimensions";
 
 function Round(props) {
     let numMatchups =[];
@@ -61,8 +62,8 @@ function Round(props) {
     }
 
     // Enter global values here, other dimensions will adjust:
-    const matchupHeight = 120;
-    const firstRoundMargin = 20;
+    const matchupHeight = matchupBoxHeight;
+    const firstRoundMargin = firstRoundBoxesMargin;
     const margins = [firstRoundMargin];
 
     //Calculations of dimensions based on global values above:
