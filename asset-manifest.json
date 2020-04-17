@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/Bracket-Game-App/static/js/main.a8091ab5.chunk.js",
+    "main.js.map": "/Bracket-Game-App/static/js/main.a8091ab5.chunk.js.map",
+    "runtime-main.js": "/Bracket-Game-App/static/js/runtime-main.2ecf1ea4.js",
+    "runtime-main.js.map": "/Bracket-Game-App/static/js/runtime-main.2ecf1ea4.js.map",
+    "static/js/2.7169bb04.chunk.js": "/Bracket-Game-App/static/js/2.7169bb04.chunk.js",
+    "static/js/2.7169bb04.chunk.js.map": "/Bracket-Game-App/static/js/2.7169bb04.chunk.js.map",
+    "index.html": "/Bracket-Game-App/index.html",
+    "precache-manifest.6a7e463d5b1126f5a2b8de5132af4433.js": "/Bracket-Game-App/precache-manifest.6a7e463d5b1126f5a2b8de5132af4433.js",
+    "service-worker.js": "/Bracket-Game-App/service-worker.js",
+    "static/js/2.7169bb04.chunk.js.LICENSE.txt": "/Bracket-Game-App/static/js/2.7169bb04.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ecf1ea4.js",
+    "static/js/2.7169bb04.chunk.js",
+    "static/js/main.a8091ab5.chunk.js"
+  ]
+}

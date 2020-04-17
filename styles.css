@@ -1,0 +1,419 @@
+body {
+    background-color: #eef9bf;
+    box-sizing: border-box;
+    font-family: 'Andika', sans-serif;
+    margin: 0;
+}
+
+header {
+    min-width: 1519px;
+    text-align: center;
+}
+
+.header-background {
+    background: linear-gradient(#a7e9af, #eef9bf);
+    padding: 1rem 0 4rem 0;
+}
+
+.main-title {
+    color: #75b79e;
+    font-family: 'Righteous', cursive;
+    font-size: 4rem;
+    font-style: italic;
+    margin: 0 0 -30px 0;
+    -webkit-text-stroke: 0.1px black;
+}
+
+.board {
+    margin: 0 auto -60px auto;
+    min-width: 1443px;
+    text-align: center;
+    width: 95%;
+}
+
+.quadrant {
+    display: inline-block;
+    min-height: 50px;
+    width: 50%;
+}
+
+.round {
+    display: inline-block;
+    min-height: 50px;
+    vertical-align: top;
+    width: 25%;
+}
+
+.matchup {
+    background-image: linear-gradient(#fff, 30%, #e6e6e6);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.competitor {
+    height: 49%;
+    text-align: left;
+    width: 100%;
+}
+
+/* Competitor block/table styling */
+
+.competitor-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.competitor-table td {
+    padding: 0;
+}
+
+.table-row-unfinished {
+    height: 50%;
+}
+
+.table-row-finished {
+    height: 100%;
+}
+
+.table-data-left {
+    width: 80%;
+}
+
+.table-data-left p {
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.table-data-right {
+    text-align: center;
+    width: 20%;
+}
+
+.inner-table {
+    height: 100%;
+    width: 100%;
+}
+
+.inner-table-row {
+    height: 50%;
+}
+
+.competitor-table input {
+    background: none;
+    border: none;
+    box-shadow: 0 1px #cccccc;
+    height: 80%;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.add-button {
+    background-color: #1976D2;
+    border: none;
+    border-radius: 100%;
+    color: #fff;
+    height: 18px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    top: 3px;
+    width: 18px;
+}
+
+.add-button:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.song-title-text {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0 0 0 3%;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-overflow: ellipsis;
+    top: 2px;
+    white-space: nowrap;
+    width: 97%;
+}
+
+.band-name-text {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 0 0 0 3%;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    top: 2px;
+    white-space: nowrap;
+    width: 97%;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    border-radius: 100%;
+    color: darkgray;
+    height: 18px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 18px;
+}
+
+.edit-button:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+.table-finished:hover {
+    background-color: rgb(200, 230, 140);
+    cursor: pointer;
+}
+
+.table-not-first-round {
+    border-collapse: collapse;
+    border-spacing: 0;
+    height: 90%;
+    width: 100%;
+}
+
+.table-not-first-round:hover {
+    background-color: rgb(200, 230, 140);
+    cursor: pointer;
+}
+
+.table-not-first-round td {
+    padding: 0;
+}
+
+.not-first-round-container {
+    height: 100%;
+    width: 100%;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    border-radius: 100%;
+    bottom: 44px;
+    color: rgb(241, 102, 102);
+    height: 18px;
+    left: 140px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 18px;
+    z-index: 10;
+}
+
+.delete-button:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+/* ------------------------------ */
+
+.input-area {
+    height: 100%;
+    width: 100%;
+}
+
+.entered-text-area {
+    display: inline-block;
+    height: 43%;
+    width: 80%;
+}
+
+.unentered-text-area {
+    display: inline-block;
+    height: 43%;
+    margin-left: 2%;
+    width: 78%;
+}
+
+.title-bold-text {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+
+.song-band-text-area {
+    display: inline-block;
+    height: 98%;
+    width: 79%;
+}
+
+.select-button-area {
+    display: inline-block;
+    height: 98%;
+    margin-left: 3%;
+    text-align: right;
+    width: 17%;
+}
+
+.select-song-button {
+    background-color: rgb(138, 211, 183);
+    border: none;
+    border-radius: 0 6px 6px 0;
+    /* bottom: 11px; */
+    box-shadow: -1px 1px 1px lightgray;
+    color: white;
+    position: relative;
+    right: 5px;
+    width: 17px;
+}
+
+.select-song-button:hover {
+    background-color: #75B79E;
+    cursor: pointer;
+}
+
+.last-rounds-area {
+    margin: 0 auto;
+    min-width: 1443px;
+    text-align: center;
+    width: 95%;
+}
+
+.semifinal-title {
+    color: #eeb947;
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    font-style: italic;
+    margin: 0 0 30px 0;
+}
+
+.semifinal-area {
+    margin-bottom: 30px;
+}
+
+.semifinal-area .matchup {
+    display: inline-block;
+    width: 163px;
+}
+
+.semifinal-matchups-container {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.semifinal-individual-matchup-container {
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+    text-align: center;
+    vertical-align: top;
+    width: 44%;
+}
+
+.final-title {
+    color: #df4e4e;
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    font-style: italic;
+    margin: 0 0 30px 0;
+    /* -webkit-text-stroke: 0.1px black; */
+}
+
+.final-area {
+    margin-bottom: 30px;
+}
+
+.final-area .matchup {
+    display: inline-block;
+    width: 163px;
+}
+
+.champion-area {
+    /* background-color: rgb(127, 209, 209); */
+    background-color: #22817d;
+    /* background-image: url(/public/images/back-pattern.png); */
+    background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+    border: 2px solid black;
+    border-radius: 50px;
+    box-shadow: 0 0 8px #9c9c9c;
+    height: 300px;
+    margin: 0 auto 70px auto;
+    width: 60%;
+}
+
+.champion-title {
+    color: #47ee8c;
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    font-style: italic;
+    margin: 9px 0 30px 0;
+    -webkit-text-stroke: 0.1px black;
+}
+
+.champion-area h4 {
+    color: rgb(238, 237, 221);
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.champion-area p {
+    color: rgb(238, 237, 221);
+    font-style: italic;
+}
+
+.champion-area h5 {
+    color: rgb(238, 237, 221);
+    font-size: 1.3rem;
+    margin: 10px 0 18px 0;
+}
+
+.delete-button-champion {
+    background: none;
+    border: none;
+    border-radius: 100%;
+    color: rgb(241, 102, 102);
+    height: 24px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 24px;
+    z-index: 10;
+}
+
+.delete-button-champion:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: tomato;
+    border: none;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-family: 'Andika', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 60px;
+    margin-bottom: 30px;
+    margin-left: 46%;
+    width: 9%;
+}
+
+.save-button:hover {
+    background: none;
+    border: 2px solid tomato;
+    color: tomato;
+    cursor: pointer;
+}
+
+footer {
+    font-size: 1.1rem;
+    text-align: center;
+}
