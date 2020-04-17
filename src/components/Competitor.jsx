@@ -59,8 +59,17 @@ function Competitor(props) {
             winnerRound: props.roundNum,
             winnerMatchup: props.matchupNum,
             winnerCompetitor: props.competitorNum,
-            deletedData: true
+            deletedData: true,
+            latestRoundWithData: (props.roundNum - 1)
         };
+
+        if (props.roundNum < 4) {
+            selectedWinnerData.roundType = "lower-round";
+        } else if (props.roundNum === 4) {
+            selectedWinnerData.roundType = "round-4";
+        } else {
+            selectedWinnerData.roundType = "late-round"
+        }
 
         props.onSelectedWinner(selectedWinnerData);
 
@@ -75,10 +84,29 @@ function Competitor(props) {
             winnerQuad: props.quadNum,
             winnerRound: props.roundNum,
             winnerMatchup: props.matchupNum,
-            winnerCompetitor: props.competitorNum
+            winnerCompetitor: props.competitorNum,
+            latestRoundWithData: (props.roundNum + 1)
         };
 
+        if (props.roundNum < 4) {
+            selectedWinnerData.roundType = "lower-round";
+        } else if (props.roundNum === 4) {
+            selectedWinnerData.roundType = "round-4";
+        } else {
+            selectedWinnerData.roundType = "late-round"
+        }
+        
         props.onSelectedWinner(selectedWinnerData);
+    }
+
+    function handleDeleteButtonRendering() {
+        if (props.winnerDataToRender.latestRoundWithData === props.roundNum || props.lastRoundsDeletionData.latestRoundWithData === props.roundNum) {
+            return (
+                <button className="delete-button" onClick={handleDelete}>
+                    <DeleteIcon style={{"fontSize": 18}} />
+                </button>
+            );
+        }
     }
 
     function firstRoundForms() {
@@ -153,7 +181,11 @@ function Competitor(props) {
                         <p className="song-title-text">{newTitle}</p>
                         </td>
                         <td className="table-data-right">
-                            <button className="edit-button" onClick={handleTitleClick}><EditIcon style={{"fontSize": 15}} /></button>
+                            {(props.winnerDataToRender.latestRoundWithData === 1) &&
+                                <button className="edit-button" onClick={handleTitleClick}>
+                                    <EditIcon style={{"fontSize": 15}} />
+                                </button>
+                            }
                         </td>
                     </tr>
                     <tr className="table-row-unfinished">
@@ -161,7 +193,11 @@ function Competitor(props) {
                             <p className="band-name-text">{newBand}</p>
                         </td>
                         <td className="table-data-right">
-                            <button className="edit-button" onClick={handleBandClick}><EditIcon style={{"fontSize": 15}} /></button>
+                            {(props.winnerDataToRender.latestRoundWithData === 1) &&
+                                <button className="edit-button" onClick={handleBandClick}>
+                                    <EditIcon style={{"fontSize": 15}} />
+                                </button>
+                            }
                         </td>
                     </tr>
                 </table>
@@ -197,7 +233,7 @@ function Competitor(props) {
                             </td>
                         </tr>
                     </table>
-                    <button className="delete-button" onClick={handleDelete}><DeleteIcon style={{"fontSize": 18}} /></button>
+                    {handleDeleteButtonRendering()}
                 </div>
             );
         }

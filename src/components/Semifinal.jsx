@@ -19,6 +19,7 @@ function Semifinal(props) {
                         matchupNum={61}
                         onWinnerSelected={handleLastRoundsWinner}
                         winnerDataToSend={props.winnerDataToRender}
+                        lastRoundsDeletionData={{}}
                     />
                 </div>
                 <div className="semifinal-individual-matchup-container">
@@ -29,6 +30,7 @@ function Semifinal(props) {
                         matchupNum={62}
                         onWinnerSelected={handleLastRoundsWinner}
                         winnerDataToSend={props.winnerDataToRender}
+                        lastRoundsDeletionData={{}}
                     />
                 </div>
             </div>

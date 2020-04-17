@@ -4,12 +4,6 @@ import Final from "./Final";
 import ChampionArea from "./ChampionArea";
 
 function LastRoundsArea(props) {
-    const [semifinalWinnerData, setSemifinalWinnerData] = useState({
-        winnerTitle: "",
-        winnerBand: "",
-        winnerTargetSpot: 0
-    });
-
     const [finalWinnerData, setFinalWinnerData] = useState({
         winnerTitle: "",
         winnerBand: "",
@@ -17,27 +11,34 @@ function LastRoundsArea(props) {
     });
 
     function handleSemifinalWinnerData(data) {
-        setSemifinalWinnerData(data);
+        props.onSemifinalDataReceived(data);
     }
 
     function handleFinalWinnerData(data) {
-        data.championReceived = true;
+        if (data.deletedData) {
+            props.onSemifinalDataReceived(data);
+        } else {
+            data.championReceived = true;
 
+            setFinalWinnerData(data);
+        };
+    }
+
+    function handleChampionDelete(data) {
         setFinalWinnerData(data);
     }
 
     return (
         <div className="last-rounds-area">
             <Semifinal
-                // semifinalData={props.lastRoundsData}
-                winnerDataToRender={semifinalWinnerData.deletedData === true ? semifinalWinnerData : props.lastRoundsData}
+                winnerDataToRender={props.lastRoundsData}
                 onLastRoundsWinnerDataReceived={handleSemifinalWinnerData}
             />
             <Final
-                finalData={semifinalWinnerData}
+                finalData={props.lastRoundsData}
                 onLastRoundsWinnerDataReceived={handleFinalWinnerData}
             />
-            <ChampionArea championData={finalWinnerData} />
+            <ChampionArea championData={finalWinnerData} onChampionDelete={handleChampionDelete} />
         </div>
     );
 }

@@ -118,6 +118,7 @@ function Round(props) {
                         matchupNum={matchup}
                         onWinnerSelected={passWinnerDataToQuadrant}
                         winnerDataToSend={props.winnerDataToSend}
+                        lastRoundsDeletionData={props.lastRoundsDeletionData}
                     />
                );
             })}

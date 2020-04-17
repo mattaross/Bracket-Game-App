@@ -8,38 +8,23 @@ function Quadrant(props) {
     });
 
     function sendWinnerDataToNextRound(data) {
-        data.winnerRound += 1;
-
-        console.log(data);
-        
-
         if (data.deletedData) {
-            if (data.winnerRound < 6) {
+            if (data.roundType === "lower-round" || data.roundType === "round-4") {
                 setReceivedWinnerData(data);
             } else {
                 props.onLastRoundsDataReceived(data);
+                setReceivedWinnerData(data);
             }
         } else {
-            if (data.winnerRound < 5) {
+            if (data.roundType === "lower-round") {
                 setReceivedWinnerData(data);
+            } else if (data.roundType === "late-round") {
+                props.onLastRoundsDataReceived(data);
             } else {
                 props.onLastRoundsDataReceived(data);
+                setReceivedWinnerData(data);
             }
         }
-
-        // if (data.winnerRound < 5) {
-        //     setReceivedWinnerData(data);
-        // } else {
-        //     if (!data.deletedData) {
-        //         props.onLastRoundsDataReceived(data);
-        //     } else {
-        //         if (data.winnerRound < 6) {
-        //             setReceivedWinnerData(data);
-        //         } else {
-        //             props.onLastRoundsDataReceived(data);
-        //         }
-        //     }
-        // }
     }
 
     return (
@@ -50,6 +35,7 @@ function Quadrant(props) {
                 quadNum={props.quadNum}
                 onWinnerDataReceived={sendWinnerDataToNextRound}
                 winnerDataToSend={receivedWinnerData}
+                lastRoundsDeletionData={props.lastRoundsData}
             />
             <Round
                 roundSide={props.quadSide}
@@ -57,6 +43,7 @@ function Quadrant(props) {
                 quadNum={props.quadNum}
                 onWinnerDataReceived={sendWinnerDataToNextRound}
                 winnerDataToSend={receivedWinnerData}
+                lastRoundsDeletionData={props.lastRoundsData}
             />
             <Round
                 roundSide={props.quadSide}
@@ -64,6 +51,7 @@ function Quadrant(props) {
                 quadNum={props.quadNum}
                 onWinnerDataReceived={sendWinnerDataToNextRound}
                 winnerDataToSend={receivedWinnerData}
+                lastRoundsDeletionData={props.lastRoundsData}
             />
             <Round
                 roundSide={props.quadSide}
@@ -71,6 +59,7 @@ function Quadrant(props) {
                 quadNum={props.quadNum}
                 onWinnerDataReceived={sendWinnerDataToNextRound}
                 winnerDataToSend={receivedWinnerData}
+                lastRoundsDeletionData={props.lastRoundsData}
             />
         </div>
     );

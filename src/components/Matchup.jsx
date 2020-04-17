@@ -26,6 +26,7 @@ function Matchup(props) {
                 targetSpotNum={targetSpotNum}
                 onSelectedWinner={passWinnerDataToRound}
                 winnerDataToRender={props.winnerDataToSend}
+                lastRoundsDeletionData={props.lastRoundsDeletionData}
             />
             <Competitor
                 top="false"
@@ -37,6 +38,7 @@ function Matchup(props) {
                 targetSpotNum={targetSpotNum}
                 onSelectedWinner={passWinnerDataToRound}
                 winnerDataToRender={props.winnerDataToSend}
+                lastRoundsDeletionData={props.lastRoundsDeletionData}
             />
         </div>
     );

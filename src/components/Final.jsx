@@ -17,6 +17,7 @@ function Final(props) {
                 matchupNum={63}
                 onWinnerSelected={handleFinalWinnerData}
                 winnerDataToSend={props.finalData}
+                lastRoundsDeletionData={{}}
             />
         </div>
     )

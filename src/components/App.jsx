@@ -17,6 +17,10 @@ function App() {
         setLastRoundsData(data);
     }
 
+    function handleSemifinalDataDeletion(data) {
+        setLastRoundsData(data);
+    }
+
     function downloadScreenCapture() {
         html2canvas(document.body).then(function(canvas) {
             saveAs(canvas.toDataURL(), 'bracket-game.png');
@@ -46,8 +50,8 @@ function App() {
     return (
         <div>
             <Header />
-            <Board onLastRoundsDataArrived={lastRoundsDataHandler} />
-            <LastRoundsArea lastRoundsData={lastRoundsData} />
+            <Board onLastRoundsDataArrived={lastRoundsDataHandler} lastRoundsData={lastRoundsData} />
+            <LastRoundsArea lastRoundsData={lastRoundsData}  onSemifinalDataReceived={handleSemifinalDataDeletion} />
             <button className="save-button" onClick={downloadScreenCapture}>Save As Image <SaveAltIcon /></button>
             <Footer />
         </div>
